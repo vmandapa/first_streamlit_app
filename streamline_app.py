@@ -23,12 +23,12 @@ streamlit.dataframe(fruits_to_show)
 # Let's put a pick list here so they can pick the fruit they want included
 #streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado', 'Strawberries'])
 streamlit.header('Fruityvice Fruit Advice!')
-fruit_choice = streamlit.text_input('What fruit would you like information about?', 'Kiwi')
+fruit_choice = streamlit.text_input('What fruit would you like information about?', 'Apple')
 streamlit.write('The user entered', fruit_choice)
 
 #New Section to display fruityvice api response
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "apple")
 
 # take the json version of the response and normalize it
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
